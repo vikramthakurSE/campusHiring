@@ -2,6 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'poppins', sans-sarif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(250, 246, 242);
 }
 
 nav{
@@ -36,6 +42,12 @@ nav{
     font-size: .8rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .nav-links{
+        width: 60%;
+    }
+}
+
 /* .burger{
     display: none;
     cursor: pointer;
@@ -48,11 +60,7 @@ nav{
     margin: 0.3rem;
 }
 
-@media screen and (max-width: 1024px) {
-    .nav-links{
-        width: 60%;
-    }
-}
+
 
 @media screen and (max-width: 768px) {
     body{
@@ -84,3 +92,173 @@ nav{
 } */
 
 
+
+/* content */
+.bet-con{
+    height: 80vh;
+
+}
+
+
+/* footer section styles */
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 4rem 8rem;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:nowrap;
+    flex-direction: row;
+}
+
+/* footer .container .sec {
+    margin-right: 1.8rem;
+} */
+
+footer .container .sec:nth-child(2){
+    margin-left: 6rem;
+    padding-left: 3rem;
+}
+
+footer .container .sec:nth-child(3){
+    margin-left: 6rem;
+    padding-left: 3rem;
+}
+
+
+footer .container .sec.aboutus {
+    width: 40%;
+}
+
+footer .container h2{
+    position: relative;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+footer .container h2:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 4rem;
+    height: .15rem;
+    background-color: black;
+}
+footer p {
+    color: #999;
+}
+
+.sci {
+    margin-top: 1.3rem;
+    display: flex;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 2.7rem;
+    height: 2.7rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.8rem;
+    text-decoration: none;
+}
+
+.sci li a .fa{
+    color: #999;
+    font-size: 1rem;
+}
+
+.quickLinks{
+    position: relative;
+    width: 25%;
+}
+
+.quickLinks ul li {
+    list-style: none;
+}
+
+.quickLinks ul li a {
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.contact {
+    width: calc(35% - 6rem);
+    margin-right: 0 !important;
+}
+
+.contact .info {
+    position: relative;
+}
+
+.contact .info li {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.contact .info li span:nth-child(1) {
+    color: #999;
+    font-size: 1.4rem;
+    margin-right: 0.7rem;
+}
+
+.contact .info li span {
+    color: black;
+}
+
+.contact .info li a{
+    color: black;
+    text-decoration: none;
+
+}
+
+.copyrightText{
+    width: 100%;
+    background-color:aliceblue;
+    padding: 0.5rem 6rem;
+    text-align: center;
+    color: rgb(54, 53, 53);
+}
+
+
+@media (max-width: 991px) {
+    footer {
+        padding: 2rem;
+    }
+    footer .container {
+        flex-direction: column;
+    }
+    footer .container .sec {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    footer .container .aboutus,
+    .quickLinks,
+    .contact {
+        width: 100%;
+    }
+    .copyrightText{
+        padding: 0.5rem 6rem;
+    }
+    footer .container .sec .aboutus {
+        margin-left: 6rem;
+        padding-left: 3rem;
+    }
+}
