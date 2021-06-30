@@ -420,8 +420,8 @@ footer p {
 }
 
 .Rcontainer{
-    max-width: 44rem;
-    width: 80%;
+    max-width: 54rem;
+    width: 100%;
     background: aliceblue;
     padding: 1.3rem 1.8rem;
     border-radius: 5px;
@@ -431,22 +431,26 @@ footer p {
     font-size: 1.4rem;
     font-weight: 500;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Rcontainer .title::before {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 34.3%;
+    bottom: -2px;
     height: 3px;
-    width: 1.8rem;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.63) , aliceblue);
+    width: 3rem;
+    background: linear-gradient(to right, rgb(32, 32, 32) , rgb(32, 32, 32));
 }
 
 .Rcontainer form .user-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 form .user-details .input-box {
