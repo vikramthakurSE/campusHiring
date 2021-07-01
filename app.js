@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 require("./db/conn");
-const Student = require("./models/registration");
+const Student = require("./modules/registration");
 
 const app = express();
 
@@ -18,6 +18,10 @@ app.get("/", function(req, res){
 
 app.get("/registration", function(req, res) {
     res.render("registration");
+})
+
+app.get("/admin_login", function(req, res) {
+    res.render("admin_login");
 })
 
 
