@@ -3,35 +3,31 @@
 <body>
 
     <%- include("partials/navbar.ejs"); -%>
+    
+    <section class="register">
 
     <div class="Rcontainer">
-        <div class="title">Register with campus Hiring</div>
+        <div class="title">
+            <h1>Register with Campus Hiring</h1>
+        </div>
         <form action="/registration" method="POST">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Name</span>
                     <input type="text" name="name" placeholder="your Name" required>
                 </div>
-            </div>
-            <div class="user-details">
                 <div class="input-box">
                     <span class="details">Registration No</span>
                     <input type="text" name="usn" placeholder="Your USN" required>
                 </div>
-            </div>
-            <div class="user-details">
                 <div class="input-box">
                     <span class="details">Email</span>
                     <input type="text" name="email" placeholder="Your Email" required>
                 </div>
-            </div>
-            <div class="user-details">
                 <div class="input-box">
                     <span class="details">Password</span>
                     <input type="password" name="password" placeholder="type password" required>
                 </div>
-            </div>
-            <div class="user-details">
                 <div class="input-box">
                     <span class="details">Confirm password</span>
                     <input type="password" name="cpassword" placeholder="Confirm Password" required>
@@ -62,5 +58,5 @@
             </div>
         </form>
     </div>
-    
+</section>
 <%- include("partials/footer.ejs"); -%>
