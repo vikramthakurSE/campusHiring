@@ -1,8 +1,11 @@
 <%- include("partials/header.ejs"); -%>
 
-<div class="registration">
+<body>
+
+    <%- include("partials/navbar.ejs"); -%>
+
     <div class="Rcontainer">
-        <div class="title">Register with campusHiring</div>
+        <div class="title">Register with campus Hiring</div>
         <form action="/registration" method="POST">
             <div class="user-details">
                 <div class="input-box">
@@ -60,6 +63,4 @@
         </form>
     </div>
     
-</div>
-
 <%- include("partials/footer.ejs"); -%>

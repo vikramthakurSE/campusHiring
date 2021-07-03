@@ -10,13 +10,20 @@ body {
     background-color: rgb(250, 246, 242);
 }
 
+
+/* NavBar Styling */
+
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
     min-height: 8vh;
     background-color: aliceblue;
     font-family: 'Poppins', sans-serif;
+}
+
+nav ul > li {
+    flex: 1;
 }
 
 .imgsize {
@@ -94,64 +101,50 @@ nav{
 
 
 
-/* content */
+/* home */
 .header{
     height: 80vh;
     background-image:url(../images/bg1.jpeg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content:space-evenly;
+    margin: 3px;
 }
 
 .left-part{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    /* height: 10rem; */
     width: 50%;
+    margin-top: 10rem;
 }
 
-.heading {
-    color: #fff;
-    text-transform: uppercase;
-}
 
 .heading-primary--main {
     display: block;
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 0.5rem;
-    animation: moveInLeft 1s ease-out 0.2s;
-    animation-fill-mode: backwards; 
+    color: #fff;
+    text-transform: uppercase;
 }
 
-.secondline {
-    height: 3rem;
-    margin-top: 2rem;
-}
 
 .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.3rem;
-    animation: moveInRight 1s ease-out 1s;
-    animation-fill-mode: backwards; 
+    color: #fff;
+    margin-top: 2rem;
   }
 
   .right-part {
-      position: absolute;
-      top: 20%;
-      left: 60%;
       height: 55vh;
-      width: 30%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.63) , aliceblue);
+      width: 30rem;
+      background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7) , rgba(240, 248, 255, 0.787));
       border-radius: 1rem;
+      margin-top: 5rem;
   }
 
-  /* .content {
-      height: 90%;
-      width: 100%;
-  } */
 
   .content h1 {
       text-align: center;
@@ -241,6 +234,16 @@ nav{
 
   .signup_link a:hover{
       text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+      div.header {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+      }
   }
 
 
@@ -389,57 +392,46 @@ footer p {
     }
     footer .container {
         flex-direction: column;
+        align-items: center;
     }
     footer .container .sec {
         margin-right: 0;
         margin-bottom: 2rem;
     }
-    footer .container .aboutus,
-    .quickLinks,
-    .contact {
-        width: 100%;
-    }
     .copyrightText{
         padding: 0.5rem 6rem;
     }
-    footer .container .sec .aboutus {
-        margin-left: 6rem;
-        padding-left: 3rem;
+    .quickLinks{
+        width: 40%;
+        margin: 0px;
+        padding: 0px;
     }
 }
 
 
 /* Registration form styles */
 
-.registration{
-    display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.63) , aliceblue);
-}
 
-.Rcontainer{
-    max-width: 54rem;
-    width: 100%;
+.Rcontainer{  
     background: aliceblue;
     padding: 1.3rem 1.8rem;
-    border-radius: 5px;
 }
 
-.Rcontainer .title{
-    font-size: 1.4rem;
-    font-weight: 500;
-    position: relative;
+div.title{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1c1c1e;
+    justify-content: center;
+    position: relative;
 }
 
 .Rcontainer .title::before {
     content: '';
     position: absolute;
-    left: 34.3%;
+    left: 50%;
     bottom: -2px;
     height: 3px;
     width: 3rem;
@@ -523,59 +515,172 @@ form .button input{
 }
 
 /* Admin Login Stylesheet */
-#admin {
-    background-color: #a8b37ac9;
-}
-
-div.admin_container {
+  
+  main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right top, aliceblue, rgb(172, 211, 245));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .glass {
+    background: white;
+    min-height: 80vh;
+    width: 70%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.027)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(5rem);
+    display: flex;
+  }
+  .circle1,
+  .circle2 {
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.829),
+      rgba(255, 255, 255, 0.5)
+    );
+    height: 20rem;
+    width: 20rem;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    border-radius: 50%;
+  }
+  
+  .circle1 {
+    top: 5%;
+    right: 7%;
+  }
+  .circle2 {
+    bottom: 5%;
+    left: 5%;
+  }
+  .dashboard {
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(
+      to right bottom,
+      rgba(240, 248, 255, 0.698),
+      rgba(190, 195, 199, 0.37)
+    );
+    border-radius: 2rem;
+  }
+  
 
-    background-color: #fff;
-    padding: 4rem;
-    border-radius: 1rem;
+  .admin_logo{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+  }
 
-}
-
-div.admin_container div.admin_form {
-    width: 17rem;
-    margin-right: 2rem;
+  .admin_form {
+    background: linear-gradient(to right top, #fff, rgb(188, 212, 233));
+    border-radius: 2rem;
+    padding: 1rem;
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    margin-right: .5rem;
     margin-left: 3rem;
-}
-
-div.admin_container div.admin_form h2 {
-    color: #1c1c1e;
+    box-shadow: 5px 5px 5px #888888;
+  }
+  
+  
+  
+  
+  div.dashboard div.admin_form h2 {
     margin-bottom: 1.3rem;
     text-transform: uppercase;
-}
-
-div.admin_container div.admin_form input {
+    margin-top: 3rem;
+  }
+  
+  div.dashboard div.admin_form input {
     border: none;
     outline: none;
-    border-radius: 0;
-    width: 100%;
+    border-radius: 1rem;
+    width: 80%;
     border-bottom: 2px solid #1c1c1e;
-    margin-bottom: 1.5rem;
-    padding: 7px 0;
-    font-size: 1.7rem;
-}
-
-div.admin_container div.admin_form button {
+    margin-top: 1.5rem;
+    padding: .8rem 0;
+    font-size: 1.3rem;
+  }
+  
+  div.dashboard div.admin_form button {
     color: #fff;
-    background-color: #1c1c1e;
+    background-color: #313133;
     border: none;
     outline: none;
-    border-radius: 2px;
+    border-radius: 2rem;
     font-size: 1rem;
-    padding: 5px 12px;
+    padding: .8rem 12px;
     font-weight: 500;
     cursor: pointer;
-}
+    margin-top: 2rem;
+    width: 50%;
+  }
+
+  div.dashboard div.admin_form button:hover{
+      background-color: #000;
+  }
+  
+  div.home {
+    position: absolute;
+    top:87%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 3rem;
+    background-color: rgb(46, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+  }
+
+  div.home:hover{
+      background-color: #000;
+  }
+  
+  div.home a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+
+@media only screen and (max-width: 500px) {
+    div.dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div.dashboard div.admin_form {
+        width: 17rem;
+        margin-top: 2rem;
+    }
+
+    div.dashboard div.admin_form h2{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    div.dashboard div.admin_form button{
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 2rem;
+    }
+  }
 
 
