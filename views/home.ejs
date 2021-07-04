@@ -15,15 +15,13 @@
 
             <div class="content">
                 <h1>Login</h1>
-                <form action="/studentLogin" method="POST">
+                <form action="/login" method="POST">
                     <div class="txt_field">
-                        <input type="text" required>
-                        <span></span>
+                        <input type="text" name="regno" required>
                         <label for=""><i class="fa fa-user" aria-hidden="true"></i>Registration Number</label>
                     </div>
                     <div class="txt_field">
-                        <input type="password" required>
-                        <span></span>
+                        <input type="password" name="pass" required>
                         <label for=""><i class="fa fa-key" aria-hidden="true"></i>password</label>
                     </div>
                     <input type="submit" value="Login">

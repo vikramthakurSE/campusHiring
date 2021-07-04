@@ -24,8 +24,8 @@ app.get("/admin_login", function(req, res) {
     res.render("admin_login");
 });
 
-app.get("/studentLogin", function(req, res) {
-    res.render("studentLogin");
+app.get("/login", function(req, res) {
+    res.render("login");
 });
 
 
@@ -53,19 +53,22 @@ app.post("/registration", async(req, res) => {
     } catch (error) {
         res.status(400).send(error);
     }
-})
+});
 
 
 //Login Verification 
 
-app.post("/studentLogin", async(req, res) => {
+app.post("/login", async(req, res) => {
     try {
-        const regno = req.body.usn;
-        const password = req.body.password;
+        const usn = req.body.regno;
+        const password = req.body.pass;
 
-        const studentregno = await Student.findOne({regno:usn});
-        if(studentregno.password === password) {
-            res.status(201).render("studentLogin");
+        console.log(usn);
+        console.log(password);
+
+        const studentregno = await Student.findOne({usn:usn});
+        if(studentregno.pass === password) {
+            res.status(201).render("login");
         } else {
             res.send("Password do not match .. Try Again !!!");
         }
