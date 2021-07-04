@@ -14,21 +14,24 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res){
     res.render("home");
-})
+});
 
 app.get("/registration", function(req, res) {
     res.render("registration");
-})
+});
 
 app.get("/admin_login", function(req, res) {
     res.render("admin_login");
-})
+});
+
+app.get("/studentLogin", function(req, res) {
+    res.render("studentLogin");
+});
 
 
 //create a new user in studentDB
 app.post("/registration", async(req, res) => {
     try {
-        console.log(req.body.name);
         const password = req.body.password;
         const cpassword = req.body.cpassword;
 
@@ -49,6 +52,26 @@ app.post("/registration", async(req, res) => {
         }
     } catch (error) {
         res.status(400).send(error);
+    }
+})
+
+
+//Login Verification 
+
+app.post("/studentLogin", async(req, res) => {
+    try {
+        const regno = req.body.usn;
+        const password = req.body.password;
+
+        const studentregno = await Student.findOne({regno:usn});
+        if(studentregno.password === password) {
+            res.status(201).render("studentLogin");
+        } else {
+            res.send("Password do not match .. Try Again !!!");
+        }
+
+    } catch (error) {
+        res.status(400).send("Invalid credentials");
     }
 })
 
