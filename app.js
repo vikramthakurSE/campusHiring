@@ -66,7 +66,7 @@ app.post("/login", async(req, res) => {
         const studentregno = await Student.findOne({usn:usn});
 
         if(studentregno.password === password) {
-            res.status(201).render("login");
+            res.status(201).render("login", {name : studentregno.name});
         } else {
             res.send("Password do not match .. Try Again !!!");
         }
