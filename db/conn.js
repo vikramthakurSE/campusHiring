@@ -7,5 +7,7 @@ mongoose.connect("mongodb+srv://admin-campusHiring:campusHIRING@123@campushiring
 }).then(() => {
     console.log('Connection Successful');
 }).catch((e) => {
-    console.log('Server is up and running at port ${port}');
+    console.log('error ... Connection unsuccesful');
 });
+
+// 

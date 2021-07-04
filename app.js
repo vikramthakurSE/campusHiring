@@ -60,14 +60,12 @@ app.post("/registration", async(req, res) => {
 
 app.post("/login", async(req, res) => {
     try {
-        const usn = req.body.regno;
+        const usn = req.body.usn;
         const password = req.body.pass;
 
-        console.log(usn);
-        console.log(password);
-
         const studentregno = await Student.findOne({usn:usn});
-        if(studentregno.pass === password) {
+
+        if(studentregno.password === password) {
             res.status(201).render("login");
         } else {
             res.send("Password do not match .. Try Again !!!");
