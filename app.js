@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 require("./db/conn");
 const Student = require("./modules/registration");
+const Admin = require("./modules/admin");
 
 const app = express();
 
@@ -25,8 +26,12 @@ app.get("/admin_login", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-    res.render("login");
+    res.render("login", {name : "vikram"});
 });
+
+app.get("/admin", (req, res) => {
+    res.render("admin");
+})
 
 
 //create a new user in studentDB
@@ -64,6 +69,7 @@ app.post("/login", async(req, res) => {
         const password = req.body.pass;
 
         const studentregno = await Student.findOne({usn:usn});
+        console.log(studentregno);
 
         if(studentregno.password === password) {
             res.status(201).render("login", {name : studentregno.name});
@@ -74,7 +80,24 @@ app.post("/login", async(req, res) => {
     } catch (error) {
         res.status(400).send("Invalid credentials");
     }
-})
+});
+
+app.post("/admin", async(req, res) => {
+    try {
+        const email = req.body.email;
+        const pass = req.body.password;
+        const admindetails = await Admin.findOne({email:email});
+        console.log(admindetails.email);
+
+        // if(admindetails.password === pass) {
+        //     res.status(201).render("admin");
+        // } else {
+        //     res.send("Password wrong !!");
+        // }
+    } catch (error) {
+        res.status(400).send("Invalid credentials");
+    }
+});
 
 app.listen(port, function(){
     console.log("Server is started !!");
