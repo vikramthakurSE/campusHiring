@@ -56,5 +56,22 @@
     <p>Copyright © 2021 | Campus Hiring</p>
 </div>
 
+<script>
+    const navSlide = () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-Links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+
+            //burger animation
+            burger.classList.toggle('toggle');
+        });
+
+    }
+    navSlide();
+</script>
+
 </body>
 </html>
