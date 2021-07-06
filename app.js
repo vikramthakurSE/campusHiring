@@ -87,13 +87,12 @@ app.post("/admin", async(req, res) => {
         const email = req.body.email;
         const pass = req.body.password;
         const admindetails = await Admin.findOne({email:email});
-        console.log(admindetails.email);
 
-        // if(admindetails.password === pass) {
-        //     res.status(201).render("admin");
-        // } else {
-        //     res.send("Password wrong !!");
-        // }
+        if(admindetails.password === pass) {
+            res.status(201).render("admin");
+        } else {
+            res.send("Password wrong !!");
+        }
     } catch (error) {
         res.status(400).send("Invalid credentials");
     }
