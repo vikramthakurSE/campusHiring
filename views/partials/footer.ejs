@@ -56,6 +56,9 @@
     <p>Copyright © 2021 | Campus Hiring</p>
 </div>
 
+</section>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script>
     const navSlide = () => {
         const burger = document.querySelector('.burger');
@@ -71,6 +74,11 @@
 
     }
     navSlide();
+    window.onload = function() {
+        document.getElementById('content').style.display="block";
+        document.getElementById('loader').style.display="none";
+};
+
 </script>
 
 </body>
