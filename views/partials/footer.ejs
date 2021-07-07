@@ -78,84 +78,84 @@
         document.getElementById('loader').style.display="none";
     };
 
-    const form = document.getElementById('Rform');
-    const rnum = document.getElementById('rnum');
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const cpassword = document.getElementById('cpassword');
+//     const form = document.getElementById('Rform');
+//     const rnum = document.getElementById('rnum');
+//     const name = document.getElementById('name');
+//     const email = document.getElementById('email');
+//     const password = document.getElementById('password');
+//     const cpassword = document.getElementById('cpassword');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+//     form.addEventListener('submit', (e) => {
+//         e.preventDefault();
 
-        checkInputs();
-    });
+//         checkInputs();
+//     });
 
-    function checkInputs() {
-        const StRegNo = rnum.value.trim();
-        const namevalue = name.value.trim();
-        const emailvalue = email.value.trim();
-        const passwordvalue = password.value.trim();
-        const cpasswordvalue = cpassword.value.trim();
+//     function checkInputs() {
+//         const StRegNo = rnum.value.trim();
+//         const namevalue = name.value.trim();
+//         const emailvalue = email.value.trim();
+//         const passwordvalue = password.value.trim();
+//         const cpasswordvalue = cpassword.value.trim();
 
-        if(StRegNo === '') {
-            //show error and add error class
-                setErrorFor(rnum, 'Registration Number cannot be empty');
-        }else {
-            //add success class
-            setSuccessFor(rnum);
-        }
+//         if(StRegNo === '') {
+//             //show error and add error class
+//                 setErrorFor(rnum, 'Registration Number cannot be empty');
+//         }else {
+//             //add success class
+//             setSuccessFor(rnum);
+//         }
 
-        if(namevalue === '') {
-            setErrorFor(name, 'Name Required');
-        }else {
-            setSuccessFor(name);
-        }
+//         if(namevalue === '') {
+//             setErrorFor(name, 'Name Required');
+//         }else {
+//             setSuccessFor(name);
+//         }
 
 
-        if(emailvalue === '') {
-            setErrorFor(email, 'Email cannot be empty');
-        } else if(!validateEmail(emailvalue)) {
-            setErrorFor(email, 'Invalid Email');
-        }else {
-            setSuccessFor(email);
-        }
+//         if(emailvalue === '') {
+//             setErrorFor(email, 'Email cannot be empty');
+//         } else if(!validateEmail(emailvalue)) {
+//             setErrorFor(email, 'Invalid Email');
+//         }else {
+//             setSuccessFor(email);
+//         }
 
-        if(passwordvalue === '') {
-            setErrorFor(password, 'Password Required');
-        }else {
-            setSuccessFor(password);
-        }
+//         if(passwordvalue === '') {
+//             setErrorFor(password, 'Password Required');
+//         }else {
+//             setSuccessFor(password);
+//         }
 
-        if(cpasswordvalue === '') {
-            setErrorFor(cpassword, 'Required Field');
-        }else if(cpasswordvalue !== passwordvalue) {
-            setErrorFor(cpassword, "Password is not matching");
-        } else {
-            setSuccessFor(cpassword);
-        }
-    }
+//         if(cpasswordvalue === '') {
+//             setErrorFor(cpassword, 'Required Field');
+//         }else if(cpasswordvalue !== passwordvalue) {
+//             setErrorFor(cpassword, "Password is not matching");
+//         } else {
+//             setSuccessFor(cpassword);
+//         }
+//     }
 
-    function setErrorFor(input, message) {
-        const userDetails = input.parentElement; //.user-details
-        const small = userDetails.querySelector('small');
+//     function setErrorFor(input, message) {
+//         const userDetails = input.parentElement; //.user-details
+//         const small = userDetails.querySelector('small');
 
-        //add error message inside small
-        small.innerText = message;
+//         //add error message inside small
+//         small.innerText = message;
 
-        //add error class
-        userDetails.className = 'user-details error';
-    }
+//         //add error class
+//         userDetails.className = 'user-details error';
+//     }
 
-    function setSuccessFor(input) {
-    const userDetails = input.parentElement;
-    userDetails.className = 'user-details success';
-    }
+//     function setSuccessFor(input) {
+//     const userDetails = input.parentElement;
+//     userDetails.className = 'user-details success';
+//     }
 
-    function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+//     function validateEmail(email) {
+//     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(String(email).toLowerCase());
+// }
 
 </script>
 

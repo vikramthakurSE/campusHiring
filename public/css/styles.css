@@ -480,7 +480,7 @@ footer p {
 
 /* Registration form styles */
 
-
+/* 
 section.register {
     display: flex;
     justify-content: center;
@@ -508,6 +508,102 @@ div.Rcontainer {
     text-align: center;
     font-size: 2.3rem;
     text-decoration: underline;
+} */
+
+
+  section.register {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    align-items: center;
+    background: linear-gradient(to right top, rgb(226, 224, 221), rgb(238, 219, 183));
+    margin: 8vh 3px 3px;
+    min-height: 80vh;
+}
+
+div.Rcontainer {
+    width: 50%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Rcontainer .title {
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: 1.2rem 2rem;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.Rcontainer .title h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    text-decoration: underline;
+}
+
+#Rform{
+   padding: 2rem 2.5rem;
+}
+
+.user-details {
+    padding-bottom: 1.2rem;
+    margin-bottom: .6rem;
+    position: relative;
+}
+
+.user-details label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.user-details input {
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+
+.success input {
+    border-color: #2ecc71;
+}
+
+.error input {
+    border-color: #e74c3c;
+}
+
+.user-details i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.error i.fa-exclamation {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.user-details.error small {
+    color: #e74e3c;
+    visibility: visible;
+}
+
+
+.user-details small {
+    position: absolute;
+    visibility: hidden;
+    bottom: 0;
+    left: 0;
 }
 
 
@@ -793,98 +889,3 @@ form input[type="radio"] {
 
 
 
-
-  /* section.register {
-    display: flex;
-    justify-content: center;
-    padding: 3rem 0;
-    align-items: center;
-    background: linear-gradient(to right top, rgb(226, 224, 221), rgb(238, 219, 183));
-    margin: 8vh 3px 3px;
-    min-height: 80vh;
-}
-
-div.Rcontainer {
-    width: 50%;
-    max-width: 1000px;
-    background: #fff;
-    border-radius: .5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.Rcontainer .title {
-    font-weight: 500;
-    margin: 1rem 0;
-    padding: 1.2rem 2rem;
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.Rcontainer .title h1 {
-    text-align: center;
-    font-size: 2.3rem;
-    text-decoration: underline;
-}
-
-#Rform{
-   padding: 2rem 2.5rem;
-}
-
-.user-details {
-    padding-bottom: 1.2rem;
-    margin-bottom: .6rem;
-    position: relative;
-}
-
-.user-details label {
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.user-details input {
-    border: 2px solid #f0f0f0;
-    border-radius: 5px;
-    display: block;
-    font-family: inherit;
-    font-size: 14px;
-    width: 100%;
-    padding: 10px;
-}
-
-.success input {
-    border-color: #2ecc71;
-}
-
-.error input {
-    border-color: #e74c3c;
-}
-
-.user-details i {
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    visibility: hidden;
-}
-
-.success i.fa-check-circle {
-    color: #2ecc71;
-    visibility: visible;
-}
-
-.error i.fa-exclamation {
-    color: #e74c3c;
-    visibility: visible;
-}
-
-.user-details.error small {
-    color: #e74e3c;
-    visibility: visible;
-}
-
-
-.user-details small {
-    position: absolute;
-    visibility: hidden;
-    bottom: 0;
-    left: 0;
-} */

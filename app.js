@@ -49,7 +49,8 @@ app.post("/registration", async(req, res) => {
                 cpassword: cpassword
             })
 
-            const registered = await users.save();
+            // const registered = await
+            users.save();
             res.status(201).render("home");
         }
         else{
