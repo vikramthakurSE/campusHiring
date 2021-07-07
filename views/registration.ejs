@@ -1,7 +1,10 @@
 <%- include("partials/header.ejs"); -%>
 
 <body>
-
+    <div id="loader">
+        <img src="images/preloader.gif" alt="">
+    </div>
+    <section id="content">
     <%- include("partials/navbar.ejs"); -%>
     
     <section class="register">
@@ -10,7 +13,8 @@
         <div class="title">
             <h1>Register with Campus Hiring</h1>
         </div>
-        <form action="/registration" method="POST">
+      
+        <form id="Rform" action="/registration" method="POST" autocomplete="off">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Name</span>
@@ -60,3 +64,60 @@
     </div>
 </section>
 <%- include("partials/footer.ejs"); -%>
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="/registration" method="POST" id="Rform">
+
+    <div class="user-details">
+        <label for="">Registration Number</label>
+        <input type="text" placeholder="Type Reg no" id="rnum" name="usn">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <small>*Required Field</small>
+    </div>
+
+    <div class="user-details">
+        <label for="">Name</label>
+        <input type="text" placeholder="Your name" id="name" name="name">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <small>This field cannot be empty</small>
+    </div>
+    
+    <div class="user-details">
+        <label for="">Email</label>
+        <input type="email" placeholder="abc@abc.com" id="email" name="email">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <small>Error Message</small>
+    </div>
+
+    <div class="user-details">
+        <label for="">Password</label>
+        <input type="password" placeholder="password" id="password" name="password">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <small>Error Message</small>
+    </div>
+
+    <div class="user-details">
+        <label for="">Confirm Password</label>
+        <input type="password" placeholder="confirm your password" id="cpassword" name="cpassword">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <small>Error Message</small>
+    </div>
+
+    <div class="button">
+        <input type="submit" value="Register">
+    </div>
+
+</form> -->

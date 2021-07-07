@@ -1,74 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'poppins', sans-sarif;
+    font-family: 'PT Serif', serif;
 }
-
-/* preloader */
-/* .loader_bg {
-    position: fixed;
-    z-index: 9999;
-    background: #fff;
-    width: 100%;
-    height: 100vh;
-}
-
-.loader {
-    border: 0 solid transparent;
-    border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
-    position: absolute;
-    top: calc(50vh - 6rem);
-    left: calc(50vw - 6rem);
-}
-
-.loader::before, .loader::after {
-    content: '';
-    border: 1em solid #49b7f6;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: loader 2s linear infinite;
-}
-
-.loader::before {
-    animation-delay: .5s;
-}
-
-@keyframes loader {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-} */
-
-
 
 body {
     min-height: 100vh;
     background-color: rgb(250, 246, 242);
+    font-family: 'open Sans', sans-serif;
 }
 
+/* Preloader */
 #content {
     display: none;
 }
 
 #loader {
     position: absolute;
-    top: calc(50vh - 5rem);
-    left: calc(50vw - 5rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /* NavBar Styling */
 
@@ -79,11 +33,12 @@ nav{
     min-height: 8vh;
     background-color: aliceblue;
     font-family: 'Poppins', sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
 }
 
-/* nav ul > li {
-    flex: 1;
-} */
 
 .imgsize {
     height: 3rem;
@@ -189,7 +144,8 @@ nav{
     background-position: center;
     display: flex;
     justify-content:space-evenly;
-    margin: 3px;
+    margin: 8vh 3px 3px;
+    
 }
 
 .left-part{
@@ -338,6 +294,25 @@ nav{
         margin-left: 1.5rem;
         margin-bottom: 5rem;
     }
+  }
+
+
+  /* youtube embeded video */
+
+  .iframe {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5%;
+  }
+
+  div.iframe .text {
+    margin-bottom: 2rem;
+    color: rgb(31, 29, 29);
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
   }
 
 
@@ -541,6 +516,7 @@ div.Rcontainer {
     flex-wrap: wrap;
     margin: 1.2rem 0 .8rem 0;
 }
+
 
 .input-box {
     margin-bottom: 3rem;
@@ -802,3 +778,113 @@ form input[type="radio"] {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* section.register {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    align-items: center;
+    background: linear-gradient(to right top, rgb(226, 224, 221), rgb(238, 219, 183));
+    margin: 8vh 3px 3px;
+    min-height: 80vh;
+}
+
+div.Rcontainer {
+    width: 50%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Rcontainer .title {
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: 1.2rem 2rem;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.Rcontainer .title h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    text-decoration: underline;
+}
+
+#Rform{
+   padding: 2rem 2.5rem;
+}
+
+.user-details {
+    padding-bottom: 1.2rem;
+    margin-bottom: .6rem;
+    position: relative;
+}
+
+.user-details label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.user-details input {
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+
+.success input {
+    border-color: #2ecc71;
+}
+
+.error input {
+    border-color: #e74c3c;
+}
+
+.user-details i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.error i.fa-exclamation {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.user-details.error small {
+    color: #e74e3c;
+    visibility: visible;
+}
+
+
+.user-details small {
+    position: absolute;
+    visibility: hidden;
+    bottom: 0;
+    left: 0;
+} */
