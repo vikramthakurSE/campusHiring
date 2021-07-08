@@ -46,7 +46,7 @@ app.post("/registration", async(req, res) => {
                 usn: req.body.usn,
                 email: req.body.email,
                 password: password,
-                cpassword: cpassword
+                cpassword: cpassword,
             })
 
             // const registered = await

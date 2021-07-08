@@ -1,0 +1,40 @@
+
+  .admin-dashboard {
+    overflow-x: hidden;
+}
+
+.A-container {
+    position: relative;
+    width: 100%;
+}
+
+.A-navigation {
+    position: fixed;
+    width: 19rem;
+    height: 100%;
+    background-color: #003147;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.A-navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.A-navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.A-navigation ul li:hover {
+    background-color: #03a9f4;
+}
+
+.A-navigation ul li:nth-child(1):hover {
+    background: transparent;
+}
