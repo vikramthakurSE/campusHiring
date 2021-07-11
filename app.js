@@ -8,6 +8,7 @@ const app = express();
 
 const port = process.env.PORT || 4000;
 
+
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -26,11 +27,12 @@ app.get("/admin_login", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-    res.render("login", {name : "vikram"});
+    res.render("login");
 });
 
-app.get("/admin", (req, res) => {
-    res.render("admin");
+app.get("/admin", async(req, res) => {
+   
+    res.render("admin_login");
 })
 
 
@@ -52,6 +54,7 @@ app.post("/registration", async(req, res) => {
             // const registered = await
             users.save();
             res.status(201).render("home");
+           
         }
         else{
             res.send("Password do not match !!");
@@ -88,9 +91,10 @@ app.post("/admin", async(req, res) => {
         const email = req.body.email;
         const pass = req.body.password;
         const admindetails = await Admin.findOne({email:email});
+        const total = await Student.find().countDocuments();
 
         if(admindetails.password === pass) {
-            res.status(201).render("admin");
+            res.status(201).render("admin", {count: total});
         } else {
             res.send("Password wrong !!");
         }

@@ -1,14 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'PT Serif', serif;
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(250, 246, 242);
     font-family: 'open Sans', sans-serif;
 }
@@ -332,6 +332,7 @@ nav{
       flex-direction: column;
       align-items: center;
       margin-top: 5%;
+      margin-bottom: 5%;
   }
 
   div.iframe .text {
@@ -343,6 +344,73 @@ nav{
     text-align: center;
   }
 
+/* awareness message */
+
+section.awareness {
+    box-shadow: 4px 5px 15px #ccc;
+    margin: 1rem;
+    padding-bottom: 7rem;
+    position: relative;
+}
+
+  div.aware-guide {
+      display: flex;
+      height: 70vh;
+      padding-top: 10rem;
+      padding-left: 4rem;
+      justify-content: space-around;
+  }
+
+  
+  .aware-img {
+      height: 40vh;
+      width: 30wh;
+      border-radius: 50%;
+  }
+
+  
+
+  h2.aware-text {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    font-weight: 800;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.aware-msg {
+    width: 50%;
+    height: 70%;
+    margin-left: 3rem;
+    
+}
+
+.learn button {
+    height: 3rem;
+    width: 20%;
+    border-radius: 2rem;
+    transition: .5s;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+}
+
+.learn button:hover {
+    background: black;
+} 
+
+.learn button a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: black;
+    width: 100%;
+}
+
+.learn button a:hover{
+    color: #fff;
+}
 
 
 /* footer section styles */

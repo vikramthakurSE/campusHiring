@@ -5,47 +5,146 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | DSI</title>
-    <script src="https://use.fontawesome.com/9f119b5c3d.js"></script>
+    <script src="https://kit.fontawesome.com/25fe916b03.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/adminpanel.css">
 </head>
-<body style="margin: 0;">
+<body>
     <section class="admin-dashboard">
 <div class="A-container">
     <div class="A-navigation">
         <ul>
-            <li> 
-                <!-- <span><img class="icon" src="images/logo.png" alt=""></span> -->
-                <span class="A-title"><h2>Campus Hiring</h2></span>
+            <li>
+                    <span class="A-title"><h2 class="A-header">Campus Hiring</h2></span>
             </li>
             <li>
-                <span class="A-icon"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
-                <span class="A-title"><h2>Dashboard</h2></span>
+                <a href="">
+                    <span class="A-icon"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
+                    <span class="A-title">Dashboard</span>
+                </a>
             </li>
             <li>
-                <span class="A-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                <span class="A-title"><h2>Students</h2></span>
+                <a href="">
+                    <span class="A-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                    <span class="A-title">Students</span>
+                </a>
             </li>
             <li>
-                <span class="A-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                <span class="A-title"><h2>Message</h2></span>
+                <a href="">
+                    <span class="A-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                    <span class="A-title">Message</span>
+                </a>
             </li>
             <li>
-                <span class="A-icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-                <span class="A-title"><h2>Settings</h2></span>
+                <a href="">
+                    <span class="A-icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                    <span class="A-title">Settings</span>
+                </a>
             </li>
             <li>
-                <span class="A-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
-                <span class="A-title"><h2>Sign Out</h2></span>
+                <a href="">
+                    <span class="A-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    <span class="A-title">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <span class="A-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                    <span class="A-title">Sign Out</span>
+                </a>
             </li>
         </ul>
     </div>
+    <div class="A-main">
+        <div class="A-topbar">
+            <div class="A-toggle" onclick="toggleMenu();"></div>
+            <div class="A-search">
+                <label for="">
+                    <input type="text" placeholder="search here" name="" id="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="A-user">
+                <img src="images/logo.png" alt="">
+            </div>
+        </div>
+
+        <div class="cardbox">
+            <div class="card">
+                <div>
+                    <div class="numbers"><%= count %></div>
+                    <div class="cardName">Registered Students</div>
+                </div>
+                <div class="iconBox">
+                    <i class="fa fa-registered" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">87</div>
+                    <div class="cardName">Applied for job</div>
+                </div>
+                <div class="iconBox">
+                    <i class="fa fa-building" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">208</div>
+                    <div class="cardName">Queries</div>
+                </div>
+                <div class="iconBox">
+                    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="details">
+           
+        </div>
+
+    </div>
 </div>
 </section>
+
+<script>
+    function toggleMenu() {
+        let toggle = document.querySelector('.A-toggle');
+        let navigation = document.querySelector('.A-navigation');
+        let main = document.querySelector('.A-main');
+        let title = document.querySelector('.A-navigation .A-title .A-header');
+        toggle.classList.toggle('A-active');
+        navigation.classList.toggle('A-active');
+        main.classList.toggle('A-active');
+        title.classList.toggle('A-hidden');
+    }
+</script>
+
 </body>
 </html>
 
 
 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/25fe916b03.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/adminpanel.css">
+
+</head>
+<body>
+    <a href="">
+        <span class="A-icon"><i class="fas fa-tachometer-alt"></i></span><span class="A-title">Dashboard</span>
+    </a>
+    
+</body>
+</html>
+
+ -->
 
 
 
@@ -53,10 +152,7 @@
 
 
 
-
-
-<!-- 
-<body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+<!-- <body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
     <div">
    <img style="height: 40rem; width: 60rem;" src="images/progress.jpg" alt="">
 </div>
