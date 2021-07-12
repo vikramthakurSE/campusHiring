@@ -224,3 +224,53 @@
     font-size: 2.5em;
     color: #03a9f4;
 }
+
+
+/* Students */
+
+.students-table{
+    margin: auto;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.students-list {
+    margin: 4rem 2rem 0 0;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.3em;
+    min-width: 30rem;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 1rem 6rem;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #dddddd;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

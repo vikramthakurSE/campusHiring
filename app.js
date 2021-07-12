@@ -31,8 +31,20 @@ app.get("/login", function(req, res) {
 });
 
 app.get("/admin", async(req, res) => {
-   
-    res.render("admin_login");
+    const total = await Student.find().countDocuments();
+    res.render("admin", {count: total});
+});
+
+app.get("/students", async(req, res) => {
+    Student.find({}, function(err, students) {
+        if (!err) {
+            res.render("students", {
+                studentsList: students
+            });
+        } else {
+            console.log(err);
+        }
+    })
 })
 
 

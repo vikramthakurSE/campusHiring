@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | DSI</title>
-    <script src="https://kit.fontawesome.com/25fe916b03.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/adminpanel.css">
-</head>
-<body>
-    <section class="admin-dashboard">
-<div class="A-container">
-    <div class="A-navigation">
-        <ul>
-            <li>
-                    <span class="A-title"><h2 class="A-header">Campus Hiring</h2></span>
-            </li>
-            <li>
-                <a href="">
-                    <span class="A-icon"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
-                    <span class="A-title">Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="A-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                    <span class="A-title">Students</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="A-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                    <span class="A-title">Message</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="A-icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
-                    <span class="A-title">Settings</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="A-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-                    <span class="A-title">Help</span>
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <span class="A-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
-                    <span class="A-title">Sign Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="A-main">
-        <div class="A-topbar">
-            <div class="A-toggle" onclick="toggleMenu();"></div>
-            <div class="A-search">
-                <label for="">
-                    <input type="text" placeholder="search here" name="" id="">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </label>
-            </div>
-            <div class="A-user">
-                <img src="images/logo.png" alt="">
-            </div>
-        </div>
+<%- include("admin/adminleft.ejs"); -%>
 
         <div class="cardbox">
             <div class="card">
@@ -80,7 +12,7 @@
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">87</div>
+                    <div class="numbers">NA</div>
                     <div class="cardName">Applied for job</div>
                 </div>
                 <div class="iconBox">
@@ -89,7 +21,7 @@
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">208</div>
+                    <div class="numbers">NA</div>
                     <div class="cardName">Queries</div>
                 </div>
                 <div class="iconBox">
@@ -99,29 +31,7 @@
         
         </div>
 
-        <div class="details">
-           
-        </div>
-
-    </div>
-</div>
-</section>
-
-<script>
-    function toggleMenu() {
-        let toggle = document.querySelector('.A-toggle');
-        let navigation = document.querySelector('.A-navigation');
-        let main = document.querySelector('.A-main');
-        let title = document.querySelector('.A-navigation .A-title .A-header');
-        toggle.classList.toggle('A-active');
-        navigation.classList.toggle('A-active');
-        main.classList.toggle('A-active');
-        title.classList.toggle('A-hidden');
-    }
-</script>
-
-</body>
-</html>
+<%- include("admin/adminJS.ejs"); -%>
 
 
 

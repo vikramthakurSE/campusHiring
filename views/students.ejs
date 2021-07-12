@@ -1,0 +1,25 @@
+<%- include("admin/adminleft.ejs"); -%>
+
+<div class="students-table">
+    <h1 class="students-list">List of Registered Students.</h1>
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>Reg no</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%studentsList.forEach(student => {%>
+            <tr>
+                <td><%= student.usn %></td>
+                <td><%= student.name %></td>
+                <td><%= student.email %></td>
+            </tr>
+        <%})%>
+    </tbody>
+</table>
+</div>
+
+<%-include("admin/adminJS.ejs"); -%>
