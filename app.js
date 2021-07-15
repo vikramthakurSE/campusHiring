@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 require("./db/conn");
 const Student = require("./modules/registration");
 const Admin = require("./modules/admin");
+const Post = require("./modules/post");
 
 const app = express();
 
@@ -27,7 +28,14 @@ app.get("/admin_login", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-    res.render("login");
+    Post.find({}, function(err, foundjobs) {
+        if(foundjobs.length === 0) {
+            res.render("login");
+        }
+        else {
+            res.render("jobs");
+        }
+    })
 });
 
 app.get("/admin", async(req, res) => {
@@ -77,18 +85,30 @@ app.post("/registration", async(req, res) => {
 });
 
 
+
 //Login Verification 
 
 app.post("/login", async(req, res) => {
     try {
         const usn = req.body.usn;
         const password = req.body.pass;
+        
 
         const studentregno = await Student.findOne({usn:usn});
-        console.log(studentregno);
+        // console.log(studentregno);
 
-        if(studentregno.password === password) {
-            res.status(201).render("login", {name : studentregno.name});
+        if(studentregno.password === password ) {
+            if(Post.find().countDocuments() === 0) {
+                res.status(201).render("login", {name : studentregno.name});
+            } else {
+                Post.find({}, function(err, foundjobs){
+                    if(!err) {
+                        res.render("jobs", {
+                            companyDetails: foundjobs
+                        })
+                    }
+                })
+            }
         } else {
             res.send("Password do not match .. Try Again !!!");
         }
@@ -97,6 +117,26 @@ app.post("/login", async(req, res) => {
         res.status(400).send("Invalid credentials");
     }
 });
+
+
+//posting jobs
+app.post("/admin1", async(req, res) => {
+    const jobs = new Post ({
+        company: req.body.company,
+        department: req.body.department,
+        branch: req.body.branch,
+        backlog: req.body.backlog,
+        location: req.body.location,
+        role: req.body.role,
+        agreement: req.body.agreement,
+        interview: req.body.interview,
+        ctc: req.body.ctc,
+        description: req.body.description
+    })
+    jobs.save();
+    const total = await Student.find().countDocuments();
+    res.status(201).render("admin", {count: total});
+})
 
 app.post("/admin", async(req, res) => {
     try {

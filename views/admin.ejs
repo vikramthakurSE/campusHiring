@@ -31,6 +31,56 @@
         
         </div>
 
+        <div class="admin-post">
+            <h1>Post New Hirings...</h1>
+            <form action="/admin1" method="POST">
+                <div class="postjob">
+                    <span>Company name </span>
+                    <input type="text" name="company" placeholder="Eg: Infosys">
+                </div>
+                <div class="postjob">
+                    <span>Eligible departments</span>
+                    <input type="text" name="department" placeholder="Eg: BCA">
+                </div>
+                <div class="postjob">
+                    <span>Eligible branches</span>
+                    <input type="text" name="branch" placeholder="if any">
+                </div>
+                <div class="postjob">
+                    <span>Backlogs</span>
+                    <input type="text" name="backlog" placeholder="No current backlogs">
+                </div>
+                <div class="postjob">
+                    <span>Job Location</span>
+                    <input type="text" name="location" placeholder="Eg: Pan India">
+                </div>
+                <div class="postjob">
+                    <span>Job Role</span>
+                    <input type="text" name="role" placeholder="Eg: Software Engineer">
+                </div>
+                <div class="postjob">
+                    <span>Service Agreement</span>
+                    <input type="text" name="agreement" placeholder="If any">
+                </div>
+                <div class="postjob">
+                    <span>Interview Process</span>
+                    <input type="text" name="interview" placeholder="Virtual Interview">
+                </div>
+                <div class="postjob">
+                    <span>CTC Offered</span>
+                    <input type="text" name="ctc" placeholder="Eg: 3.5lacs">
+                </div>
+                <div class="postjob">
+                    <span>Description</span>
+                    <input class="lastinput" type="text" name="jobdesc" placeholder="">
+                </div>
+                <div class="post-button">
+                    <button type="submit">Post</button>
+                </div>
+                
+            </form>
+        </div>
+
 <%- include("admin/adminJS.ejs"); -%>
 
 

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://admin-campusHiring:campusHIRING@123@campushiring.casra.mongodb.net/studentDB", {
+mongoose.connect("mongodb://localhost:27017/exampleDB", {
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
