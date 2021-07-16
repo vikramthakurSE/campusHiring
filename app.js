@@ -98,13 +98,16 @@ app.post("/login", async(req, res) => {
         // console.log(studentregno);
 
         if(studentregno.password === password ) {
-            if(Post.find().countDocuments() === 0) {
+            const jobsNo = await Post.find().countDocuments();
+            if(jobsNo === 0) {
                 res.status(201).render("login", {name : studentregno.name});
             } else {
                 Post.find({}, function(err, foundjobs){
                     if(!err) {
                         res.render("jobs", {
-                            companyDetails: foundjobs
+                            name: studentregno.name,
+                            regno: studentregno.usn,
+                            companyLists: foundjobs
                         })
                     }
                 })

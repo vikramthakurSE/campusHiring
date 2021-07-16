@@ -4,27 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/25fe916b03.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/studentpanel.css">
+
     <title>Document</title>
 </head>
 <body>
-    <section class="student-login">
-        <div class="student-left">
-            
+    <nav>
+        <div class="logo">
+           <a href="#"><img class="imgsize" src="images/logo.png" alt="logo"></a>
         </div>
-        <div class="student-right">
+        <ul class="nav-links">
+            <li><a  href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </nav>
 
-        </div>
+    <div class="bg-img">
+        <div class="welcome">
+            <h2>“It's not what you achieve, it's what you overcome. That's what defines your career." —Carlton Fisk
+            </h2>
+           
+        </div> 
+    </div>
+    
+    <section class="job-details">
+        <h1><%= name %></h1>
+        <h3>Reg no: <%= regno %></h3>
+        <h2>New Hirings...</h2>
+
+        <% companyLists.forEach(foundjob => { %>
+            <div class="jobs-list">
+               <h3 class="comp-title"><%= foundjob.company %></h3>
+               <p><%= foundjob.branch %></p>
+               <p><%= foundjob.description %></p>
+            </div>
+        <%})%>
+       
     </section>
-
-
-
-    <% companyDetails.forEach(detail => { %>
-    <h1><%= detail.company %></h1>
-    <h1><%= detail.department %></h1>
-    <h1><%= detail.branch %></h1>
-    <h1><%= detail.location %></h1>
-<% }) %>
-
+    
 </body>
 </html>
 

@@ -32,7 +32,7 @@ const postSchema = new mongoose.Schema({
         required: true
     },
 
-    description: String
+    description: String,
 });
 
 const Post = new mongoose.model("Post", postSchema);
