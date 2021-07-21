@@ -32,16 +32,19 @@
     
     <section class="job-details">
         <h1><%= name %></h1>
-        <h3>Reg no: <%= regno %></h3>
+        <h3 class="regno">Reg no: <%= regno %></h3>
         <h2>New Hirings...</h2>
 
         <% companyLists.forEach(foundjob => { %>
             <div class="jobs-list">
-               <h3 class="comp-title"><%= foundjob.company %></h3>
-               <p><%= foundjob.branch %></p>
-               <p><%= foundjob.description %></p>
-            </div>
-        <%})%>
+                <h3><%= foundjob.company %></h3>
+                <p style="font-weight: 900;
+                     text-transform: uppercase;"><%= foundjob.department %></p>
+                <p><%= foundjob.branch %></p>
+                <p style="color: rgb(110, 110, 110);
+                padding-top: 1rem;"><%= foundjob.description.substring(0, 400) + "...." %> <a href="/login/<%=foundjob.company %>">Read More</a> </p>
+             </div>
+         <%})%>
        
     </section>
     

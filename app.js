@@ -56,6 +56,19 @@ app.get("/students", async(req, res) => {
 })
 
 
+app.get("/login/:companyName", async function(req, res) {
+    const requestedJob = req.params.companyName;
+    Post.find({}, function(err, foundjobs) {
+        if(!err) {
+            foundjobs.forEach(foundjob => {    
+                if(requestedJob === foundjob.company) {
+                    res.render("indi-jobs", {company: foundjob.company});
+                }
+            });
+        }
+    })
+})
+
 //create a new user in studentDB
 app.post("/registration", async(req, res) => {
     try {

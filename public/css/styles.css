@@ -37,9 +37,9 @@ nav{
     width: 100%;
     z-index: 999;
     top: 0;
-    box-shadow: 4px 43px 123px -18px rgba(87,77,77,1);
--webkit-box-shadow: 4px 43px 123px -18px rgba(87,77,77,1);
--moz-box-shadow: 4px 43px 123px -18px rgba(87,77,77,1);
+    box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
+-webkit-box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
+-moz-box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
 }
 
 
@@ -377,32 +377,35 @@ section.awareness {
     
 }
 
-.learn button {
-    height: 3rem;
-    width: 20%;
-    border-radius: 2rem;
-    transition: .5s;
-    position: absolute;
-    left: 50%;
-    top: 80%;
-    transform: translateX(-50%);
+.learn {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    margin-left: 50%;
+
 }
 
-.learn button:hover {
-    background: black;
-} 
+.learn button:nth-child(1) {
+    background-color: #000000;
+}
+
+.learn button {
+    height: 3rem;
+    width: 40%;
+    border-radius: 2rem;
+    transition: .5s;
+}
+
+
 
 .learn button a{
     text-decoration: none;
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 600;
     color: black;
     width: 100%;
 }
 
-.learn button a:hover{
-    color: #fff;
-}
 
 
 /* footer section styles */

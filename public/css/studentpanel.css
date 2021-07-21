@@ -76,7 +76,7 @@ section.job-details {
     width: 80%;
     border-left: 3px solid #999;
     border-right: 3px solid #999;
-    /* height: 100vh; */
+    margin-top: -.5rem;
     background-color: #fff;
     border-radius: 18px 18px 18px 18px;
 -webkit-border-radius: 18px 18px 18px 18px;
@@ -96,13 +96,21 @@ section.job-details h2 {
     font-weight: 800;
     letter-spacing: 4px;
     text-decoration: underline;
-    text-shadow: 2px 14px 20px rgba(0,0,0,0.77);
+    text-shadow: 2px -1px 50px rgba(0,0,0,0.56);
 }
 
 section.job-details h3 {
     color: rgb(114, 114, 114);
+}
+
+.job-details a{
+    text-decoration: none;
+}
+
+h3.regno {
     padding-left: 1rem;
 }
+
 
 .jobs-list {
     margin: auto;
@@ -114,6 +122,7 @@ section.job-details h3 {
     transition: .5s;
     overflow: hidden;
     margin-bottom: 5rem;
+    padding: 1rem 0 0 2rem;
 }
 
 .jobs-list h3{
@@ -123,12 +132,9 @@ section.job-details h3 {
     letter-spacing: 2px;
     font-weight: 700;
 }
-.comp-title {
-    padding: 1rem;
-}
 
 .jobs-list:hover {
-    box-shadow: -3px 31px 101px -25px rgb(73, 73, 73);
--webkit-box-shadow: -3px 31px 101px -25px rgb(80, 80, 80);
--moz-box-shadow: -3px 31px 101px -25px rgb(65, 64, 64);
+    box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
+-webkit-box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
+-moz-box-shadow: -2px 2px 19px -4px rgba(0,0,0,0.78);
 }
