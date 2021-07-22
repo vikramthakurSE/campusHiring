@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/25fe916b03.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/studentpanel.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+           <a href="#"><img class="imgsize" src="../images/logo.png" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a  href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="hiring">
+        <center><img src="../images/handShake.png" alt=""></center>
+        <h1>Dear Student, </h1>
+        <h1>Greetings from <%= name %></h1>
+        <br>
+        <hr>
+        <h1><%= department %></h1>
+        <h3><%= branch %></h3>
+        <br>
+        <h2>Description/Requirements:</h2>
+        <p><%= description %></p>
+        <br>
+        <h2>Eligibility:</h2>
+        <p><i class="w3-small fa fa-circle" aria-hidden="true"></i><%= batch %> </p>
+        <p><i class="fa fa-circle" aria-hidden="true"></i><%= percentage %></p>
+        <p><i class="fa fa-circle" aria-hidden="true"></i><%= backlog %></p>
+        <br>
+        <h2>Selection Process:</h2>
+        <p><%= interview %></p>
+        <h2>Role:</h2>
+        <p><%= role %></p>
+        <h2>Location:</h2>
+        <p><%= location %></p>
+        <h2>CTC: </h2>
+        <p><%= ctc %></p>
+        <div class="button">
+            <a href="<%= link %>"><button class="button-apply" type="submit">Apply</button></a>
+        </div>
+
+    </section>
+
+    
+
+</body>
+</html>

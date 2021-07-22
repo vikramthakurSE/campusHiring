@@ -13,14 +13,20 @@ const postSchema = new mongoose.Schema({
 
     branch: String,
 
-    backlog: Number,
+    batch: String,
+
+    percentage: String,
+
+    backlog: String,
 
     location: {
         type: String,
         required: true
     },
 
-    agreement: Number,
+    role: String,
+
+    agreement: String,
 
     interview: {
         type: String, 
@@ -32,7 +38,9 @@ const postSchema = new mongoose.Schema({
         required: true
     },
 
-    description: String,
+    link: String,
+
+    description: String
 });
 
 const Post = new mongoose.model("Post", postSchema);

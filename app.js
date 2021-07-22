@@ -56,17 +56,29 @@ app.get("/students", async(req, res) => {
 })
 
 
-app.get("/login/:companyName", async function(req, res) {
-    const requestedJob = req.params.companyName;
-    Post.find({}, function(err, foundjobs) {
-        if(!err) {
-            foundjobs.forEach(foundjob => {    
-                if(requestedJob === foundjob.company) {
-                    res.render("indi-jobs", {company: foundjob.company});
-                }
-            });
-        }
-    })
+app.get("/login/:id", async function(req, res) {
+    try {
+       const _id = req.params.id;
+       const jobData = await Post.findById(_id);
+       console.log(jobData.company);
+       res.render("individual", {
+           name:jobData.company,
+           department: jobData.department,
+           branch: jobData.branch,
+           description: jobData.description,
+           batch: jobData.batch,
+           percentage: jobData.percentage,
+           backlog: jobData.backlog,
+           ctc: jobData.ctc,
+           role: jobData.role,
+           location: jobData.location,
+           interview: jobData.interview,
+           link: jobData.link
+       });
+    } catch (e) {
+        console.log(e);
+    }
+    
 })
 
 //create a new user in studentDB
@@ -141,12 +153,15 @@ app.post("/admin1", async(req, res) => {
         company: req.body.company,
         department: req.body.department,
         branch: req.body.branch,
+        percentage: req.body.percentage,
+        batch: req.body.batch,
         backlog: req.body.backlog,
         location: req.body.location,
         role: req.body.role,
         agreement: req.body.agreement,
         interview: req.body.interview,
         ctc: req.body.ctc,
+        link: req.body.link,
         description: req.body.description
     })
     jobs.save();

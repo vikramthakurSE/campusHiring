@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div class="logo">
-           <a href="#"><img class="imgsize" src="images/logo.png" alt="logo"></a>
+           <a href="#"><img class="imgsize" src="../images/logo.png" alt="logo"></a>
         </div>
         <ul class="nav-links">
             <li><a  href="#">Home</a></li>
@@ -21,7 +21,6 @@
             <li><a href="/">Logout</a></li>
         </ul>
     </nav>
-
     <div class="bg-img">
         <div class="welcome">
             <h2>“It's not what you achieve, it's what you overcome. That's what defines your career." —Carlton Fisk
@@ -42,7 +41,7 @@
                      text-transform: uppercase;"><%= foundjob.department %></p>
                 <p><%= foundjob.branch %></p>
                 <p style="color: rgb(110, 110, 110);
-                padding-top: 1rem;"><%= foundjob.description.substring(0, 400) + "...." %> <a href="/login/<%=foundjob.company %>">Read More</a> </p>
+                padding-top: 1rem;"><%= foundjob.description.substring(0, 400) + "...." %> <a class="read-more" href="/login/<%= foundjob._id %>">Read More</a> </p>
              </div>
          <%})%>
        
