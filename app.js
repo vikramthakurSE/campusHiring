@@ -4,6 +4,7 @@ require("./db/conn");
 const Student = require("./modules/registration");
 const Admin = require("./modules/admin");
 const Post = require("./modules/post");
+const md5 = require('md5');
 
 const app = express();
 
@@ -84,8 +85,8 @@ app.get("/login/:id", async function(req, res) {
 //create a new user in studentDB
 app.post("/registration", async(req, res) => {
     try {
-        const password = req.body.password;
-        const cpassword = req.body.cpassword;
+        const password = md5(req.body.password);
+        const cpassword = md5(req.body.cpassword);
 
         if(password === cpassword){
             const users = new Student ({
@@ -116,7 +117,7 @@ app.post("/registration", async(req, res) => {
 app.post("/login", async(req, res) => {
     try {
         const usn = req.body.usn;
-        const password = req.body.pass;
+        const password = md5(req.body.pass);
         
 
         const studentregno = await Student.findOne({usn:usn});
