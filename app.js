@@ -20,6 +20,10 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
+app.get("/about", function(req, res) {
+    res.render("about");
+})
+
 app.get("/registration", function(req, res) {
     res.render("registration");
 });
@@ -56,7 +60,6 @@ app.get("/students", async(req, res) => {
     })
 })
 
-
 app.get("/login/:id", async function(req, res) {
     try {
        const _id = req.params.id;
@@ -82,12 +85,13 @@ app.get("/login/:id", async function(req, res) {
     
 })
 
+
 //create a new user in studentDB
 app.post("/registration", async(req, res) => {
     try {
         const password = md5(req.body.password);
-        const cpassword = md5(req.body.cpassword);
 
+        const cpassword = md5(req.body.cpassword);
         if(password === cpassword){
             const users = new Student ({
                 name: req.body.name,
@@ -187,6 +191,12 @@ app.post("/admin", async(req, res) => {
     }
 });
 
+
+//icons links
+
+
+
 app.listen(port, function(){
     console.log("Server is started !!");
 })
+
