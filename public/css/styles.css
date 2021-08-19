@@ -323,7 +323,7 @@ nav{
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 5%;
+      margin-top: 2%;
       margin-bottom: 5%;
   }
 
@@ -331,8 +331,8 @@ nav{
     margin-bottom: 2rem;
     color: rgb(31, 29, 29);
     text-transform: uppercase;
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 300;
     text-align: center;
   }
 
@@ -341,14 +341,14 @@ nav{
 section.awareness {
     box-shadow: 4px 5px 15px #ccc;
     margin: 1rem;
-    padding-bottom: 7rem;
+    padding-bottom: 3rem;
     position: relative;
 }
 
   div.aware-guide {
       display: flex;
-      height: 70vh;
-      padding-top: 10rem;
+      height: 60vh;
+      padding-top: 4rem;
       padding-left: 4rem;
       justify-content: space-around;
   }

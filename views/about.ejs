@@ -1,37 +1,42 @@
 <%- include("partials/header.ejs"); -%>
 
 <body>
-    <div id="loader">
-        <img src="images/preloader.gif" alt="">
-    </div>
-
-    <section id="A-content">
-        <%- include("partials/navbar.ejs"); -%>
-
-    <div class="A-container">
-        <div class="content-section">
-            <h1>About us</h1>
+    <%- include("partials/navbar.ejs"); -%>
+    <section id="about">
+        <div class="A-container">
+            <div class="content-section">
+                <div class="title">
+                    <h1>About us</h1>
+                </div>
+            
+                <div class="A-content">
+                    <h3>
+                        Campus hiring is one of the surest, safest and
+                    probably the easiest alternative for fresh
+                    graduates who are looking for a job. As and when
+                    accompany visits any college and declares their
+                    requirements, the students should be informed
+                    of it at the earliest. When such information can
+                    be collected and organized in one single place, it
+                    increases the convenience for both students and
+                    the college and also prevents loss of information.
+                    For this purpose, we intend to develop this
+                    website.
+                    </h3>
+                </div>
+                <div class="A-social">
+                    <a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="A-image">
+                <img src="images/about-us.png" alt="aboutUS">
+            </div>
         </div>
-        <div class="A-content">
-            <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </h3>
-        </div>
-        <div class="A-social">
-            <a href="www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="www.youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-        </div>
-    </div>
     </section>
     
-<script>
-    window.onload = function() {
-        document.getElementById('A-content').style.display="block";
-        document.getElementById('loader').style.display="none";
-    };
-</script>
 
 </body>
 </html>
