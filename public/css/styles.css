@@ -69,6 +69,10 @@ nav{
     font-size: 12px;
 }
 
+nav ul li a:hover {
+    color: #000;
+}
+
 .burger{
     display: none;
     cursor: pointer;
@@ -505,6 +509,10 @@ footer p {
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
+}
+
+.quickLinks ul li a:hover {
+    color: #000;
 }
 
 .contact {

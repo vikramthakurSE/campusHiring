@@ -24,6 +24,18 @@ app.get("/about", function(req, res) {
     res.render("about");
 })
 
+app.get("/contactus", function(req, res) {
+    res.render("contactus");
+})
+
+app.get("/profile", function(req, res) {
+    res.render("profile");
+})
+
+app.get("/sendmsg", function(req, res) {
+    res.render("sendmsg");
+})
+
 app.get("/registration", function(req, res) {
     res.render("registration");
 });

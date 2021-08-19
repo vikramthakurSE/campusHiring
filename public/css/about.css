@@ -14,6 +14,22 @@
     width: 55%;
 }
 
+.A-content {
+    padding-top: 1.3rem;
+}
+
+.A-content .info li {
+    margin-top: 1.2rem;
+    color: #464545;
+    line-height: 1.7rem;
+    font-size: 1.3rem;
+    list-style: none;
+}
+
+.A-content .info li i {
+    padding-right: 5px;
+}
+
 .A-image {
     float: right;
     width: 40%;
@@ -23,6 +39,7 @@
     width: 100%;
     height: auto;
 }
+
 
 .content-section .title {
     text-transform: uppercase;
