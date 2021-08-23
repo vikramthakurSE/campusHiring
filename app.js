@@ -5,6 +5,7 @@ const Student = require("./modules/registration");
 const Admin = require("./modules/admin");
 const Post = require("./modules/post");
 const md5 = require('md5');
+let studentregno = '';
 
 const app = express();
 
@@ -25,32 +26,78 @@ app.get("/about", function(req, res) {
 })
 
 app.get("/contactus", function(req, res) {
-    res.render("contactus");
+  res.render("sendmsg");
 })
 
-app.get("/profile", function(req, res) {
-    res.render("profile");
+app.get("/jobs", function(req, res) {
+    Post.find({}, function(err, foundjobs){
+        if(!err) {
+            res.render("jobs", {
+                name: studentregno.name,
+                regno: studentregno.usn,
+                _id: studentregno.id,
+                companyLists: foundjobs
+            })
+        }
+    })
 })
 
+
+// app.get("/profile/:id", async(req, res) => {
+//     try{
+//         const _id = req.params.id;
+//         const studentData = await Student.findById(_id);
+//         console.log(studentData.name);
+//         res.render("profile", {
+//             name: studentData.name,
+//             regno: studentregno.usn,
+//             email: studentData.email
+//         })
+//         return
+//     }catch (e) {
+//         console.log(e);
+//     }
+    
+// })
+
+
+//user to contact admin
 app.get("/sendmsg", function(req, res) {
     res.render("sendmsg");
 })
 
+
+//user to register
 app.get("/registration", function(req, res) {
     res.render("registration");
 });
 
+
+//admin login page get request
 app.get("/admin_login", function(req, res) {
     res.render("admin_login");
 });
 
-app.get("/login", function(req, res) {
-    Post.find({}, function(err, foundjobs) {
+
+//get page after user logins if jobs available "jobs" page will be rendered else "login" page will be rendered
+app.get("/login", async(req, res) => {
+    Post.find({}, async(err, foundjobs) => {
         if(foundjobs.length === 0) {
             res.render("login");
         }
         else {
-            res.render("jobs");
+            const usn = req.body.usn;
+            const studentregno = Student.findOne({usn:usn});
+            console.log(studentregno.name);
+            Post.find({}, function(err, foundjobs){
+                if(!err) {
+                    res.render("jobs", {
+                        name: studentregno.name,
+                        regno: studentregno.usn,
+                        companyLists: foundjobs
+                    })
+                }
+            })
         }
     })
 });
@@ -72,7 +119,21 @@ app.get("/students", async(req, res) => {
     })
 })
 
-app.get("/login/:id", async function(req, res) {
+app.get("/student/:id", async(req, res) => {
+    try {
+        const _id = req.params.id;
+        const studentData = await Student.findById(_id);
+        res.render("profile", {
+            name: studentData.name,
+            regno: studentData.usn,
+            email: studentData.email
+        })
+    } catch (e) {
+        console.log(e);
+    }
+})
+
+app.get("/login/:id", async(req, res) => {
     try {
        const _id = req.params.id;
        const jobData = await Post.findById(_id);
@@ -136,7 +197,7 @@ app.post("/login", async(req, res) => {
         const password = md5(req.body.pass);
         
 
-        const studentregno = await Student.findOne({usn:usn});
+        studentregno = await Student.findOne({usn:usn});
         // console.log(studentregno);
 
         if(studentregno.password === password ) {
@@ -149,6 +210,7 @@ app.post("/login", async(req, res) => {
                         res.render("jobs", {
                             name: studentregno.name,
                             regno: studentregno.usn,
+                            _id: studentregno.id,
                             companyLists: foundjobs
                         })
                     }
@@ -203,8 +265,6 @@ app.post("/admin", async(req, res) => {
     }
 });
 
-
-//icons links
 
 
 
