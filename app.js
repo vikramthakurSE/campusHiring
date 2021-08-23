@@ -26,7 +26,7 @@ app.get("/about", function(req, res) {
 })
 
 app.get("/contactus", function(req, res) {
-  res.render("sendmsg");
+  res.render("contactus");
 })
 
 app.get("/jobs", function(req, res) {
