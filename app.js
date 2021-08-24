@@ -4,6 +4,7 @@ require("./db/conn");
 const Student = require("./modules/registration");
 const Admin = require("./modules/admin");
 const Post = require("./modules/post");
+const Message = require("./modules/message");
 const md5 = require('md5');
 let studentregno = '';
 
@@ -43,27 +44,12 @@ app.get("/jobs", function(req, res) {
 })
 
 
-// app.get("/profile/:id", async(req, res) => {
-//     try{
-//         const _id = req.params.id;
-//         const studentData = await Student.findById(_id);
-//         console.log(studentData.name);
-//         res.render("profile", {
-//             name: studentData.name,
-//             regno: studentregno.usn,
-//             email: studentData.email
-//         })
-//         return
-//     }catch (e) {
-//         console.log(e);
-//     }
-    
-// })
-
 
 //user to contact admin
 app.get("/sendmsg", function(req, res) {
-    res.render("sendmsg");
+    res.render("sendmsg", {
+        _id: studentregno.id
+    });
 })
 
 
@@ -156,6 +142,20 @@ app.get("/login/:id", async(req, res) => {
         console.log(e);
     }
     
+})
+
+
+app.get("/receivedmsg", async(req, res) => {
+
+    Message.find({}, function(err, messages) {
+        if (!err) {
+            res.render("admin_msgs", {
+                messagesList: messages
+            });
+        } else {
+            console.log(err);
+        }
+    })
 })
 
 
@@ -264,6 +264,29 @@ app.post("/admin", async(req, res) => {
         res.status(400).send("Invalid credentials");
     }
 });
+
+app.post("/sendmsg", function(req, res) {
+
+    try {
+        const name = req.body.name;
+        const email = req.body.email;
+        const msg = req.body.msg;
+
+        const message = new Message ({
+            name: name,
+            email: email,
+            msg: msg
+        })
+
+        message.save();
+        res.render("sendmsg", {
+            _id: studentregno.id
+        });
+    } catch (error) {
+        console.log(error);
+    }
+    
+})
 
 
 

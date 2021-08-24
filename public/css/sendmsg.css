@@ -62,6 +62,7 @@ nav{
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
 }
 .container .content{
   display: flex;
@@ -142,7 +143,7 @@ nav{
   display: inline-block;
   margin-top: 12px;
 }
-.right-side .button input[type="button"]{
+.right-side .button input[type="submit"]{
   color: #fff;
   font-size: 18px;
   outline: none;
@@ -153,8 +154,9 @@ nav{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button input[type="button"]:hover{
+.button input[type="submit"]:hover{
   background: #5029bc;
+  cursor: pointer;
 }
 
 @media (max-width: 950px) {

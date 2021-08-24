@@ -1,0 +1,12 @@
+<%- include("admin/adminleft.ejs"); -%>
+
+<h1>One Message Received !!!</h1>
+
+<%messagesList.forEach(message => {%>
+    <h1><%= message.name %></h1>
+    <h1><%= message.email %></h1>
+    <h1><%= message.msg %></h1>
+<%})%>
+
+
+<%- include("admin/adminJS.ejs"); -%>
