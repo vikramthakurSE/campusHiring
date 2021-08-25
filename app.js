@@ -137,7 +137,8 @@ app.get("/login/:id", async(req, res) => {
            role: jobData.role,
            location: jobData.location,
            interview: jobData.interview,
-           link: jobData.link
+           link: jobData.link,
+           _id: studentregno.id
        });
     } catch (e) {
         console.log(e);

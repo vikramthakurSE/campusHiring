@@ -15,9 +15,9 @@
            <a href="#"><img class="imgsize" src="../images/logo.png" alt="logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a  href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="sendmsg">Contact Us</a></li>
+            <li><a  href="/jobs">Home</a></li>
+            <li><a href="/student/<%= _id %>">Profile</a></li>
+            <li><a href="/sendmsg">Contact Us</a></li>
             <li><a href="/">Logout</a></li>
         </ul>
     </nav>
@@ -48,6 +48,7 @@
         <h2>CTC: </h2>
         <p><%= ctc %></p>
         <div class="button">
+            <a href="/jobs"><button class="button-apply">Back Home</button></a>
             <a href="<%= link %>"><button class="button-apply" type="submit">Apply</button></a>
         </div>
 
