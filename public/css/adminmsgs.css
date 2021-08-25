@@ -1,0 +1,53 @@
+
+.cont {
+    margin: 2rem auto 0;
+    width: 95%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    padding: 3%;
+    height: 90vh;
+}
+
+
+.msg {
+    background-color: #009879;
+    height: 4rem;
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.msg h1 {
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 auto;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.sender {
+    margin: 1rem 0 1rem;
+}
+
+.sender h3 {
+    margin-bottom: 5px;
+}
+
+.sender-msg {
+    /* margin: 2rem auto 0; */
+    width: 95%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    padding: 3%;
+    height: auto;
+    display: inline-flex;
+}
+
+.sender-msg h2 {
+    margin-left: auto;
+    margin-right: 1rem;
+}

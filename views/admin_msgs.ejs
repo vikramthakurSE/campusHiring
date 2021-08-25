@@ -1,12 +1,29 @@
 <%- include("admin/adminleft.ejs"); -%>
 
-<h1>One Message Received !!!</h1>
+<div class="cont">
+    <div class="msg">
+        <h1>One Message Received.</h1>
+    </div>
 
-<%messagesList.forEach(message => {%>
-    <h1><%= message.name %></h1>
-    <h1><%= message.email %></h1>
-    <h1><%= message.msg %></h1>
-<%})%>
+    <%messagesList.forEach(message => {%>
+        <form action="/admin_msgs" method="post">
+        <div class="sender">
+            <h3>Sender's Name : <%= message.name %></h3>
+            <h3>Sender's Email : <%= message.email %></h3>
+        </div>
+        <div class="sender-msg">
+            <h1><%= message.msg %></h1>
+            <h2><a href="mailto:<%= message.email %>"><i class="fa fa-reply" aria-hidden="true"></i>
+            </a></h2>
+
+            
+                <button type="submit"><h2><i class="fa fa-trash-o" aria-hidden="true"></i>
+                </h2></button>
+            </form>
+        </div>
+
+    <%})%>
+</div>
 
 
 <%- include("admin/adminJS.ejs"); -%>

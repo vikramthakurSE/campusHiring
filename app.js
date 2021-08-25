@@ -147,7 +147,7 @@ app.get("/login/:id", async(req, res) => {
 })
 
 
-app.get("/receivedmsg", async(req, res) => {
+app.get("/message", async(req, res) => {
 
     Message.find({}, function(err, messages) {
         if (!err) {
@@ -290,6 +290,7 @@ app.post("/sendmsg", function(req, res) {
     }
     
 })
+
 
 
 
