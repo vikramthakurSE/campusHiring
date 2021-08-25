@@ -8,12 +8,15 @@ const studentSchema = new mongoose.Schema({
         trim: true,
         uppercase: true
     },
+
+
     usn: {
         type: String,
         required: true,
         unique: true,
         uppercase: true
     },
+
     email: {
         type: String,
         required: true,
@@ -25,20 +28,30 @@ const studentSchema = new mongoose.Schema({
             } 
         }
     },
+
     password: {
         type: String,
         required: true,
         trim: true,
     },
+
     cpassword: {
         type: String,
         required: true,
         trim: true
     },
+
+    gender: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    
     date : {
         type: Date,
         default: Date.now
     }
+
 })
 
 

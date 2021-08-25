@@ -112,7 +112,8 @@ app.get("/student/:id", async(req, res) => {
         res.render("profile", {
             name: studentData.name,
             regno: studentData.usn,
-            email: studentData.email
+            email: studentData.email,
+            gender: studentData.gender
         })
     } catch (e) {
         console.log(e);
@@ -170,8 +171,9 @@ app.post("/registration", async(req, res) => {
                 name: req.body.name,
                 usn: req.body.usn,
                 email: req.body.email,
+                gender: req.body.gender,
                 password: password,
-                cpassword: cpassword,
+                cpassword: cpassword
             })
 
             // const registered = await
